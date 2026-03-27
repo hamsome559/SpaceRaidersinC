@@ -210,7 +210,7 @@ int main(void) {
    LevelData current = levels[CurrentLevel];
    showLevelIntro = true;
    levelIntroTimer = 1.0f;
-   enemy_speed = 50 * current.enemySpeedMultiplier;
+   enemy_speed = 40 * current.enemySpeedMultiplier;
    enemyshootCooldown = current.enemyShootCooldown;
 
 
@@ -220,6 +220,7 @@ int main(void) {
         BeginDrawing();
         ClearBackground(BLACK);
 
+        //start
         if (waitforstarting) {
             DrawTexture(bgTexture, 0, 0, WHITE);
 
@@ -240,6 +241,7 @@ int main(void) {
         float dt = GetFrameTime();
         enemyshootTimer += dt;
 
+        //game over
         if (gameOver) {
             DrawTexture(bgTexture, 0, 0, WHITE);
 
